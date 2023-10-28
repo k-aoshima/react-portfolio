@@ -1,4 +1,5 @@
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Slide } from '@mui/material';
+import { Box } from '@mui/system';
 import React, { useState } from 'react';
 import { forwardRef } from 'react';
 
@@ -21,7 +22,7 @@ const ProductItem = ({ data }) =>{
         <div style={{ display: "block" }}>
             <img 
                 src={data.url} 
-                alt='...' 
+                alt='' 
                 style={{ maxWidth: "300px" }} 
                 onClick={handleClickOpen}
             />
@@ -35,12 +36,28 @@ const ProductItem = ({ data }) =>{
                 keepMounted
                 onClose={handleClose}
                 aria-describedby="alert-dialog-slide-description"
+                maxWidth="xl"
+                fullWidth={true}
             >
-                <DialogTitle>{data.title}</DialogTitle>
-                <DialogContent>
-                    <DialogContentText id="alert-dialog-slide-description">
-                        {dialogData.explanation}
-                    </DialogContentText>
+                <DialogTitle sx={{ textAlign: "center" }}>
+                    <Box style={{ fontWeight: "bold", fontSize: "25px"}}>
+                        {data.title}
+                    </Box>
+                    <Box style={{ fontSize: "16px" }}>
+                        {data.subtitle}
+                    </Box>
+                </DialogTitle>
+                <DialogContent sx={{ textAlign: "center" }}>
+                    <img src={`${process.env.PUBLIC_URL}/img/${ dialogData.img }`} alt="" style={{maxWidth: "550px", paddingBottom: "20px"}} ></img>
+                    <div style={{ width: "100%", textAlign: "center", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
+                        <DialogContentText id="alert-dialog-slide-description" sx={{ paddingBottom: " 20px", maxWidth: "620px"}}>
+                            {dialogData.explanation}
+                        </DialogContentText>
+                        <DialogContentText id="alert-dialog-slide-description" sx={{ paddingBottom: "20px" }}>
+                            { dialogData.diagramImg ? "ーシステム相関図ー" : "" }
+                        </DialogContentText>
+                        <img src={`${process.env.PUBLIC_URL}/img/${ dialogData.diagramImg }` } alt='' style={{width: "600px"}}></img>
+                    </div>                    
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose}>Close</Button>
