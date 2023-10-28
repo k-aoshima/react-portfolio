@@ -1,5 +1,4 @@
-import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Slide } from '@mui/material';
-import { Box } from '@mui/system';
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Slide, Box } from '@mui/material';
 import React, { useState } from 'react';
 import { forwardRef } from 'react';
 
@@ -48,7 +47,7 @@ const ProductItem = ({ data }) =>{
                     </Box>
                 </DialogTitle>
                 <DialogContent sx={{ textAlign: "center" }}>
-                    <img src={`${process.env.PUBLIC_URL}/img/${ dialogData.img }`} alt="" style={{maxWidth: "550px", paddingBottom: "20px"}} ></img>
+                    <img src={`${process.env.PUBLIC_URL}/img/${ dialogData.img }`} alt="" style={{width: "60vw", maxWidth: "550px", paddingBottom: "20px"}} ></img>
                     <div style={{ width: "100%", textAlign: "center", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
                         <DialogContentText id="alert-dialog-slide-description" sx={{ paddingBottom: " 20px", maxWidth: "620px"}}>
                             {dialogData.explanation}
@@ -56,7 +55,7 @@ const ProductItem = ({ data }) =>{
                         <DialogContentText id="alert-dialog-slide-description" sx={{ paddingBottom: "20px" }}>
                             { dialogData.diagramImg ? "ーシステム相関図ー" : "" }
                         </DialogContentText>
-                        <img src={`${process.env.PUBLIC_URL}/img/${ dialogData.diagramImg }` } alt='' style={{width: "600px"}}></img>
+                        { dialogData.diagramImg ? <img src={`${process.env.PUBLIC_URL}/img/${ dialogData.diagramImg }` } alt='' style={{width: "60vw", maxWidth: "600px"}}></img> : "" }
                     </div>                    
                 </DialogContent>
                 <DialogActions>
