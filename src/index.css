@@ -8,6 +8,13 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.title-font {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.text-font {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
 }

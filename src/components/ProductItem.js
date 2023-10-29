@@ -27,7 +27,7 @@ const ProductItem = ({ data }) =>{
                 onClick={handleClickOpen}
             />
             <div style={{ textAlign: "center" }}>
-                <h2 style={{ margin: "10px 0 5px 0", fontWeight: "bold", fontSize: "25px" }}>{data.title}</h2>
+                <h2 className='title-font' style={{ margin: "10px 0 5px 0", fontWeight: "bold", fontSize: "25px" }}>{data.title}</h2>
                 <div style={{ fontSize: "15px" }}>{data.subtitle}</div>
             </div>
             <Dialog
@@ -40,32 +40,34 @@ const ProductItem = ({ data }) =>{
                 fullWidth={true}
             >
                 <DialogTitle sx={{ textAlign: "center" }}>
-                    <Box style={{ fontWeight: "bold", fontSize: "25px"}}>
+                    <Box className='title-font' style={{ fontWeight: "bold", fontSize: "25px"}}>
                         {data.title}
                     </Box>
-                    <Box style={{ fontSize: "16px" }}>
+                    <Box className='text-font' style={{ fontSize: "16px" }}>
                         {data.subtitle}
                     </Box>
                 </DialogTitle>
                 <DialogContent sx={{ textAlign: "center" }}>
                     <img src={`${process.env.PUBLIC_URL}/img/${ dialogData.img }`} alt="" style={{width: "60vw", maxWidth: "550px", paddingBottom: "20px"}} ></img>
                     <div style={{ width: "100%", textAlign: "center", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
-                        <DialogContentText id="alert-dialog-slide-description" sx={{ paddingBottom: " 20px", maxWidth: "620px"}}>
+                        <DialogContentText className='text-font' id="alert-dialog-slide-description" sx={{ paddingBottom: " 20px", maxWidth: "620px"}}>
                             {dialogData.explanation}
                         </DialogContentText>
-                        <DialogContentText id="alert-dialog-slide-description" sx={{ paddingBottom: "20px" }}>
+                        <DialogContentText className='text-font'  id="alert-dialog-slide-description" sx={{ paddingBottom: "20px" }}>
                             { dialogData.diagramImg ? "ーシステム相関図ー" : "" }
                         </DialogContentText>
                         { dialogData.diagramImg ? <img src={`${process.env.PUBLIC_URL}/img/${ dialogData.diagramImg }` } alt='' style={{width: "60vw", maxWidth: "600px", paddingBottom: "20px"}}></img> : "" }
-                        <DialogContentText id="alert-dialog-slide-description">
+                        <DialogContentText className='text-font' id="alert-dialog-slide-description">
                             ー使用言語などー
                         </DialogContentText>
-                        <DialogContentText id="alert-dialog-slide-description" sx={{ paddingBottom: "30px" }}>
+                        <DialogContentText className='text-font' id="alert-dialog-slide-description" sx={{ paddingBottom: "30px" }}>
                             { dialogData.useSkill }
                         </DialogContentText>
                         <a href={dialogData.githubUrl}>
                             <GitHubIcon />
-                            GitHub
+                            <div className='text-font'>
+                                GitHub    
+                            </div>
                         </a>
                     </div>                    
                 </DialogContent>

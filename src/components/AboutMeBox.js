@@ -6,7 +6,7 @@ function AboutMeBox() {
   const AboutMeText = () =>{
     return(
         <Box sx={{ width: "100%", display: "flex", justifyContent: "center"}}>
-          <div style={{ maxWidth:"1200px", fontSize: "16px", margin: "0 30px 0 30px"}}>
+          <div  className='text-font' style={{ maxWidth:"1200px", fontSize: "16px", margin: "0 30px 0 30px"}}>
             静岡県出身。大学にて幅広く工学デザインを学んだのち、ハウスメーカーに営業職として就職。かねてから技術者になりたいという思いと、ITを駆使したものづくりに携わりたいという思いから、IT業界へ。今年で4年目になり、.NETのアプリケーションエンジニアとして設計から製造、テストまで幅広く業務を経験してきました。現在はクライアント様と会話させて頂きながら基本設計から詳細設計、製造、改修までが主な業務になります。
             <br/>
             <br/>【主な開発経験】
@@ -30,7 +30,7 @@ function AboutMeBox() {
 
   return (
     <Box sx={{ margin: "100px 0 100px 0"}}>
-      <h3 style={{ width: "100%", display: "flex", justifyContent: "center", fontSize: "30px", marginBottom: "0px"}}>
+      <h3  className='title-font' style={{ width: "100%", display: "flex", justifyContent: "center", fontSize: "30px", marginBottom: "0px"}}>
         ABOUTME
       </h3>
       <Box sx={{ width: "100%", display: "flex", justifyContent: "center", margin: "20px 0 50px 0" }}>

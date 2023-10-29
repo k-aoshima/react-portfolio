@@ -10,8 +10,8 @@ function Home() {
     <Box sx={{ flex: "1" }}>
         <Box sx={{ display:"center", height: "400px", backgroundColor: "#836BE0", justifyContent: "center", alignItems: "center"}}>
           <Box sx={{textAlign: "center", color: "white" }}>
-            <div className="title-font" style={{ fontSize: "70px" }}>Ao-Lab</div>
-            <div className="title-font" style={{ fontSize: "36px" }}>Portfolio</div>
+            <div className="title-font" style={{ fontSize: "60px" }}>Ao-Lab</div>
+            <div className="title-font" style={{ fontSize: "26px" }}>Portfolio</div>
           </Box>
         </Box>
         <div id="about-me">

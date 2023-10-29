@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import { Accordion, AccordionDetails, AccordionSummary} from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary } from '@mui/material';
 import UseWindowSize from './UseWindowSize';
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 
@@ -22,7 +22,9 @@ const AccordionMenu = () => {
       onChange={(_event, expanded) =>{ setIsAccordionOpen(expanded)}}
      >
       <AccordionSummary expandIcon={<MenuOpenIcon style={{ color: "white" }}/>}>
-        <Typography sx={{ color: "white" }}>Ao-Lab</Typography>
+        <div className='title-font' style={{ color: "white" }}>
+          Ao-Lab
+        </div>
       </AccordionSummary>
       <AccordionDetails onClick={handleClick}>
         <HeaderMenu style={{ display: "flex", flexDirection: "column" }}/>
@@ -32,9 +34,10 @@ const AccordionMenu = () => {
 }
 
 const HeaderMenu = ({ style }) =>{
+
   return(
-      <div style={ style }>
-        <AnchorLink href="#about-me" offset="120" style={{ paddingRight: " 30px", paddingBottom: "15px", color: "white", textDecoration:"none"}}>
+      <div className='title-font' style={ style }>
+        <AnchorLink href="#about-me" offset="120" style={{ paddingRight: " 30px", paddingBottom: "15px", color: "white", textDecoration:"none" }}>
           ABOUTME
         </AnchorLink>
         <AnchorLink href="#skill-sheet" offset="50" style={{ paddingRight: " 30px", paddingBottom: "15px", color: "white", textDecoration:"none"}}>
@@ -53,7 +56,9 @@ const AppBarComponent = () => {
       <AppBar position="static" style={{ height: "48px" }}>
         <Toolbar sx={{ backgroundColor: "#212529"}}>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Ao-Lab
+            <div className='title-font'>
+              Ao-Lab
+            </div>
           </Typography>
           <HeaderMenu />
         </Toolbar>

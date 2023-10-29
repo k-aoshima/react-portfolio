@@ -8,10 +8,10 @@ function SkillSheetBox() {
     return(
       <Box sx={{ height: "auto", textAlign: "center"}}>
         <img src={`${process.env.PUBLIC_URL}/img/${ skillData.img }`} alt="" style={{ height:"100px", padding: "0"}}></img>
-        <Box sx={{ marginTop: "10px", fontWeight: "bold", fontSize: "20px" }}>
+        <Box className='title-font' sx={{ marginTop: "10px", fontWeight: "bold", fontSize: "20px" }}>
           { skillData.title }
         </Box>
-        <Box sx= {{ margin: "20px 20px 60px 20px", maxWidth: "400px" }}>
+        <Box className='text-font' sx= {{ margin: "20px 20px 60px 20px", maxWidth: "400px" }}>
           { skillData.text }
         </Box>
       </Box>
@@ -20,7 +20,7 @@ function SkillSheetBox() {
 
   return (
     <Box sx={{ height: "auto", backgroundColor: "#EBE7FF", padding: "20px 0 50px 0", display:"flex", alignItems: "center", justifyContent:"center", flexDirection: "column"}}>
-      <h3 style={{ width: "100%", display: "flex", justifyContent: "center", fontSize: "30px", paddingTop: "30px"}}>
+      <h3 className='title-font' style={{ width: "100%", display: "flex", justifyContent: "center", fontSize: "30px", paddingTop: "30px"}}>
         SKILLSHEET
       </h3>
       <Box sx={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent:"center", maxWidth: "1400px"}}>
