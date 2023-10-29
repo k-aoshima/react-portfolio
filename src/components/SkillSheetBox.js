@@ -24,7 +24,7 @@ function SkillSheetBox() {
         SKILLSHEET
       </h3>
       <Box sx={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent:"center", maxWidth: "1400px"}}>
-        <SkillItem 
+        <SkillItem
           skillData={SkillData.cSharp}
         />
         <SkillItem 

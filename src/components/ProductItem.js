@@ -1,6 +1,7 @@
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Slide, Box } from '@mui/material';
 import React, { useState } from 'react';
 import { forwardRef } from 'react';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 const Transition = forwardRef(function Transition(props, ref){
     return <Slide direction='up' ref={ref} {...props} />;
@@ -55,11 +56,21 @@ const ProductItem = ({ data }) =>{
                         <DialogContentText id="alert-dialog-slide-description" sx={{ paddingBottom: "20px" }}>
                             { dialogData.diagramImg ? "ーシステム相関図ー" : "" }
                         </DialogContentText>
-                        { dialogData.diagramImg ? <img src={`${process.env.PUBLIC_URL}/img/${ dialogData.diagramImg }` } alt='' style={{width: "60vw", maxWidth: "600px"}}></img> : "" }
+                        { dialogData.diagramImg ? <img src={`${process.env.PUBLIC_URL}/img/${ dialogData.diagramImg }` } alt='' style={{width: "60vw", maxWidth: "600px", paddingBottom: "20px"}}></img> : "" }
+                        <DialogContentText id="alert-dialog-slide-description">
+                            ー使用言語などー
+                        </DialogContentText>
+                        <DialogContentText id="alert-dialog-slide-description" sx={{ paddingBottom: "30px" }}>
+                            { dialogData.useSkill }
+                        </DialogContentText>
+                        <a href={dialogData.githubUrl}>
+                            <GitHubIcon />
+                            GitHub
+                        </a>
                     </div>                    
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleClose}>Close</Button>
+                    <Button onClick={handleClose}>Close Project</Button>
                 </DialogActions>
             </Dialog>
         </div>
